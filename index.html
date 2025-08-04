@@ -1491,7 +1491,7 @@ let showingDetails=false;let lastData=null;function toggleHelpBox(){showingDetai
   <div id="content"><!---->
 
       
-    <div role="application" tabindex="0" title="Dino game. A pixelated dinosaur dodges cacti and pterodactyls as it runs across a desolate landscape. When you hear an audio cue, press space to jump over obstacles." aria-label="Dino game, press space to play" class="runner-container"><canvas class="runner-canvas" width="600" height="150" style="width: 600px; height: 150px;"></canvas><span class="offline-runner-live-region" aria-live="assertive"></span></div><label  tabindex="0" </span></label><div role="application" tabindex="0" title="Jump!" aria-label="Dino game, press space to play" class="runner-container" style="width: 600px;"><canvas class="runner-canvas" width="600" height="150" style="width: 600px; height: 150px;"></canvas><span class="offline-runner-live-region" aria-live="assertive">Game started.</span></div><label class="slow-speed-option">PlayerName:<input type=
+    <div role="application" tabindex="0" title="Dino game. A pixelated dinosaur dodges cacti and pterodactyls as it runs across a desolate landscape. When you hear an audio cue, press space to jump over obstacles." aria-label="Dino game, press space to play" class="runner-container"><canvas class="runner-canvas" width="600" height="150" style="width: 600px; height: 150px;"></canvas><span class="offline-runner-live-region" aria-live="assertive"></span></div><label  tabindex="0" </span></label><div role="application" tabindex="0" title="Jump!" aria-label="Dino game, press space to play" class="runner-container" style="width: 600px;"><div id="playerNameLabel"></div> <canvas class="runner-canvas" width="600" height="150" style="width: 600px; height: 150px;"></canvas><span class="offline-runner-live-region" aria-live="assertive">Game started.</span></div><label class="slow-speed-option">PlayerName:<input type="text" id="playerNameInput"<input type 
     <!--?lit$756399320$-->
       <div id="sub-frame-error">
         <!-- Show details when hovering over the icon, in case the details are
@@ -1499,6 +1499,11 @@ let showingDetails=false;let lastData=null;function toggleHelpBox(){showingDetai
         <div class="icon "></div>
         <div id="sub-frame-error-details">No internet</div>
       </div>
+
+  <a href="cheats.html">
+    <button type="button" style="font-size: 12px; padding: 4px 8px;">Cheats</button>
+  </a>
+<div id="playerNameLabel" style="text-align: bottom; font-weight: bold; margin-bottom: 6px;"></div>
     
   <!---->
       
@@ -1542,6 +1547,11 @@ let showingDetails=false;let lastData=null;function toggleHelpBox(){showingDetai
     </template>
   </div>
 
+<script>const input = document.getElementById('playerNameInput');
+const label = document.getElementById('playerNameLabel');
 
-<script>var loadTimeDataRaw = {"details":"Details","dinoGameA11yAriaLabel":"Dino game, press space to play","dinoGameA11yDescription":"Dino game. A pixelated dinosaur dodges cacti and pterodactyls as it runs across a desolate landscape. When you hear an audio cue, press space to jump over obstacles.","dinoGameA11yGameOver":", your score is $1.","dinoGameA11yHighScore":"Your highest score is $1.","dinoGameA11yStartGame":"Game started.","errorCode":"","fontfamily":"'Segoe UI', Tahoma, sans-serif","fontfamilyMd":"'Segoe UI', Tahoma, sans-serif","fontsize":"75%","heading":{"msg":""},"hideDetails":"Hide details","iconClass":"icon-offline","language":"en","suggestionsDetails":[],"suggestionsSummaryList":[{"summary":""},{"summary":""},{"summary":"\u003Ca href=\"javascript:diagnoseErrors()\" id=\"diagnose-link\">\u003C/a>"}],"suggestionsSummaryListHeader":":","summary":{"msg":""},"textdirection":"ltr","title":"www.google.com"};</script></body></html>
-
+input.addEventListener('input', () => {
+  const name = input.value.trim();
+  label.textContent = name ? ` ${name}` : '';
+});
+ var loadTimeDataRaw = {"details":"Details","dinoGameA11yAriaLabel":"Dino game, press space to play","dinoGameA11yDescription":"Dino game. A pixelated dinosaur dodges cacti and pterodactyls as it runs across a desolate landscape. When you hear an audio cue, press space to jump over obstacles.","dinoGameA11yGameOver":", your score is $1.","dinoGameA11yHighScore":"Your highest score is $1.","dinoGameA11yStartGame":"Game started.","errorCode":"","fontfamily":"'Segoe UI', Tahoma, sans-serif","fontfamilyMd":"'Segoe UI', Tahoma, sans-serif","fontsize":"75%","heading":{"msg":""},"hideDetails":"Hide details","iconClass":"icon-offline","language":"en","suggestionsDetails":[],"suggestionsSummaryList":[{"summary":""},{"summary":""},{"summary":"\u003Ca href=\"javascript:diagnoseErrors()\" id=\"diagnose-link\">\u003C/a>"}],"suggestionsSummaryListHeader":":","summary":{"msg":""},"textdirection":"ltr","title":"www.google.com"};</script></body></html>
