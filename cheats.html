@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cheats</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Product+Sans&display=swap');
+
+    body {
+      font-family: 'Product Sans', 'Segoe UI', Tahoma, sans-serif;
+      background-color: #202124;
+      color: #fff;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 16px 40px;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: 28px;
+      margin-bottom: 40px;
+      letter-spacing: 0.03em;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 880px;
+      width: 100%;
+      justify-items: center;
+    }
+
+    .cheat-button {
+      background-color: #8AB4F8;
+      border: none;
+      color: #202124;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 24px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 200px;
+      transition: background-color 0.15s ease;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .cheat-button:hover,
+    .cheat-button:focus {
+      background-color: #1765cc;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Cheats</h1>
+
+  <div class="button-grid">
+    <button class="cheat-button" data-cheat="var original = Runner.prototype.gameOver">Glitch</button>
+    <button class="cheat-button" data-cheat="Runner.prototype.gameOver = function (){}">Immortal</button>
+    <button class="cheat-button" data-cheat="Runner.instance_.setSpeed(66);">FastMode</button>
+    <button class="cheat-button" data-cheat="Runner.instance_.setSpeed(5);">NormalMode</button>
+
+    <button class="cheat-button" data-cheat="Runner.instance_.tRex.setJumpVelocity(5);">Jump 5</button>
+    <button class="cheat-button" data-cheat="Runner.instance_.tRex.setJumpVelocity(10);">Jump 10</button>
+    <button class="cheat-button" data-cheat="Runner.instance_.tRex.setJumpVelocity(20);">Jump 20</button>
+    <button class="cheat-button" data-cheat="Runner.instance_.setSpeed(0.5);">SlowMode</button>
+
+    <button class="cheat-button" data-cheat="Runner.prototype.gameOver = original">Un-immortal</button>
+    <button class="cheat-button" data-cheat="Runner.instance_.playingIntro = true">Break your Character</button>
+    <button class="cheat-button" data-cheat="Runner.instance_.playingIntro = false">Fix your character</button>
+    <button class="cheat-button" data-cheat="Runner.instance_.setSpeed(250);">SuperFastMode</button>
+  </div>
+
+  <script>
+    document.querySelectorAll('.cheat-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const cheat = button.getAttribute('data-cheat');
+        navigator.clipboard.writeText(cheat);
+      });
+    });
+  </script>
+</body>
+</html>
